@@ -1,0 +1,38 @@
+@mixin display-justify-align($display, $justify, $align) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin badge {
+    background-color: $venetian-red;
+    border-radius: 100%;
+    color: $white;
+    @include width-height(20px, 20px);
+    @include display-justify-align(flex, center, center);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@mixin btn-purple {
+    color: $white;
+    background-color: $purple;
+    border: none;
+    box-shadow: 0px 2px 8px rgba(211, 211, 211, 0.25);
+    border-radius: 58px;
+    cursor: pointer;
+    user-select: none;
+}
+
+@mixin custom-select {
+    appearance: none;
+    background: url(../assets/images/arrow-down.svg) right 6px no-repeat;
+    background-origin: content-box;
+    border: none;
+}

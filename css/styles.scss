@@ -1,0 +1,369 @@
+@import "./reset.scss";
+@import "./variables";
+@import "./mixins";
+
+/*  ==================
+    [ Mobile First ] */
+
+.container {
+    
+}
+
+/* Main Navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    @include width-height(100%, 56px);
+    padding: 12px 0 8px;
+    background: $white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px -1px 2px rgba(191, 191, 191, 0.25);
+
+    .main-menu {
+        width: 398px;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            min-width: 50px;
+
+            a {
+                text-align: center;
+                font-size: 12px;
+                font-weight: 400;
+                @include display-justify-align(flex, center, center);
+                flex-direction: column;
+                
+                svg {
+                    fill: $davy-grey;
+                    
+                    &:hover {
+                        fill: $blue-cola;
+                    }
+                }
+            }
+            
+            &.job {
+                position: relative;
+                
+                .badge {
+                    @include badge;
+                }
+            }
+
+            &.post-job {
+                .icon {
+                    background-color: $purple;
+                    @include display-justify-align(flex, center, center);
+                    @include width-height(65px, 65px);
+                    border-radius: 100%;
+                    position: relative;
+                    margin-top: -45px;
+                    margin-bottom: 5px;
+                    border: 10px solid #fff;
+                    box-shadow: 0px -1px 2px rgba(191, 191, 191, 0.25);
+
+                    svg {
+                        fill: $white;
+                    }
+                }
+            }
+
+            &.notification {
+                display: none;
+            }
+
+            &:hover,
+            &.active {
+                font-weight: 600;
+                color: $blue-cola;
+                transition: fill 0.3s ease;
+                border-bottom: 3.5px solid $blue-cola;
+                margin-bottom: -8px;
+                
+                a {
+                    font-weight: 600;
+                    color: $blue-cola;
+                }
+
+                svg {
+                    fill: $blue-cola;
+                }
+            }
+        }
+    }
+
+    .menu-right {
+        display: none;
+    }
+}
+
+/* House Items Menu */
+.house-items {
+    @include display-justify-align(flex, center, center);
+    background-color: $white;
+    
+    .container {
+        @include display-justify-align(flex, space-between, center);
+    }
+
+    .house-items-menu {
+        width: 324px;
+        margin-right: 28px;
+        display: flex;
+        margin-bottom: 7px;
+
+        li {
+            a {
+                @include width-height(108px, 77px);
+                @include display-justify-align(flex, center, center);
+                padding: 4px 9px;
+                border-radius: 8px;
+                flex-direction: column;
+                color: $davy-grey;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 500;
+
+                &:hover,
+                &.active {
+                    color: $white;
+                    background-color: $ateneo-blue;
+                }
+            }
+
+            margin-right: 14px;
+        }
+    }
+
+    select {
+        @include custom-select;
+        width: 30px;
+    }
+}
+
+/* Categories Row */
+.categories-row {
+    @include display-justify-align(flex, center, center);
+    border-top: 1px solid $platinum;
+    border-bottom: 1px solid $platinum;
+    background-color: $white;
+
+    .container {
+        @include display-justify-align(flex, space-between, center);
+    }
+
+    .categories {
+        width: 324px;
+        margin-right: 28px;
+        display: flex;
+        justify-content: center;
+        padding: 8px 0 10px;
+
+        button {
+            border: 1px solid $philippine-gray;
+            height: 30px;
+            border-radius: 36px;
+            background: $white;
+            padding: 7px 13px;
+            margin-right: 6px;
+            user-select: none;
+            cursor: pointer;
+
+            &.active {
+                color: $white;
+                border: none;
+                padding-right: 35px;
+                background: $blue-cola url(../assets/images/right-tick.svg) right 12px center no-repeat;
+            }
+        }
+    }
+
+    select {
+        @include custom-select;
+        width: 30px;
+    }
+}
+
+/* Search Row */
+.search-row {
+    @include display-justify-align(flex, center, center);
+    background-color: $white;
+    padding: 8px 0;
+
+    input[type=search] {
+        border: 1px solid $light-silver;
+        @include width-height(263px, 44px);
+        box-shadow: 0px 2px 8px rgba(211, 211, 211, 0.25);
+        border-radius: 59px;
+        background: $white url(../assets/images/search-pin.svg) 15px center no-repeat;
+        padding: 14px 15px 14px 46px;
+        margin-right: 6px;
+    }
+
+    .btn-search {
+        @include btn-purple;
+        @include width-height(86px, 44px);
+        padding: 15px 8px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 12px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .btn-reset {
+        cursor: pointer;
+        user-select: none;
+        border: none;
+        background: none;
+
+        span {
+            display: none;
+        }
+    }
+}
+
+/*  ==================================
+    [ Responsive Section Starts Here ] */
+
+@media(min-width: 1480px) {
+    .container {
+        width: 1480px;
+    }
+
+    .navigation {
+        @include width-height(100%, 72px);
+        padding: 12px 0 8px;
+        position: static;
+        border-bottom: 1px solid $platinum;
+        text-align: center;
+
+        .container {
+            display:flex;
+            justify-content:center;
+
+            .centered {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                transform: translateX(135px);
+            }
+        
+            .right {
+                justify-self: end;
+            }
+        }
+    
+        .main-menu {
+            width: 450px;
+
+            li {
+                &.post-job {
+                    display: none;
+                }
+    
+                &.notification {
+                    display: block;
+                }
+            }
+        }
+
+        .menu-right {
+            @include display-justify-align(flex, center, center);
+            margin-left: auto;
+
+            .btn-post-job {
+                @include btn-purple;
+                padding: 10px 32px;
+                margin-right: 40px;
+            }
+
+            .messages {
+                position: relative;
+                width: 24px;
+                margin-right: 31px;
+
+                .badge {
+                    @include badge;
+                    top: -10px;
+                    right: -10px;
+                }
+            }
+        }
+    }
+
+    .house-items {
+        .house-items-menu {
+            width: calc(100% - 100px);
+            padding: 7px 0;
+            margin-right: 22px;
+            margin-bottom: 0;
+            @include display-justify-align(flex, center, center);
+        }
+
+        select {
+            width: 65px;
+        }
+    }
+
+    .slick-arrow {
+        border: 1px solid $platinum;
+        @include width-height(30px, 30px);
+        @include display-justify-align(flex, center, center);
+        border-radius: 100%;
+        background: $white;
+        box-shadow: 0px 4px 8px rgba(158, 158, 158, 0.25);
+        text-indent: -9999px;
+        padding: 5px 10px !important;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .categories-row {
+        .categories {
+            width: calc(100% - 100px);
+            margin-right: 28px;
+        }
+
+        select {
+            width: 65px;
+        }
+    }
+
+    .search-row {
+        input[type=search] {
+            width: 364px;
+            margin-right: 10px;
+        }
+        
+        .btn-search {
+            width: 259px;
+            @include btn-purple;
+            padding: 15px 0;
+            font-size: 16px;
+            box-shadow: 0px 2px 8px rgba(119, 119, 119, 0.55);
+        }
+
+        .divider {
+            display: block;
+            width: 1px;
+            margin-right: 17px;
+        }
+
+        .btn-reset {
+            svg {
+                display: none;
+            }
+            span {
+                display: block;
+                font-weight: 500;
+            }
+        }
+    }
+
+}
