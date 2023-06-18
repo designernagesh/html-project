@@ -56,7 +56,13 @@ a:hover {
   align-items: center;
   flex-direction: column;
 }
+.navigation .main-menu li a .icon {
+  min-height: 19px;
+  margin-bottom: 3px;
+}
 .navigation .main-menu li a svg {
+  height: 19px;
+  width: auto;
   fill: #595959;
 }
 .navigation .main-menu li a svg:hover {
@@ -154,6 +160,12 @@ a:hover {
 .house-items .house-items-menu li a:hover, .house-items .house-items-menu li a.active {
   color: #FFFFFF;
   background-color: #084B66;
+}
+.house-items .house-items-menu li a .img {
+  min-height: 35px;
+}
+.house-items .house-items-menu li a span {
+  min-height: 30px;
 }
 .house-items .house-items-menu .slick-arrow {
   display: none !important;
@@ -649,8 +661,163 @@ a:hover {
   transition: 0.1s max-height 0.1s, 0.1s opacity 0.1s;
 }
 
+/* Styles for mobile view */
+.select-mobile {
+  display: none;
+}
+
+/* Styles for desktop view */
+.select-desktop {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  /* Styles for mobile view */
+  .select-mobile {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  /* Styles for desktop view */
+  .select-desktop {
+    display: block;
+  }
+}
 /*  ==================================
     [ Responsive Section Starts Here ] */
+@media (min-width: 600px) {
+  .house-items .house-items-menu {
+    margin-right: 25px;
+    width: 475px;
+  }
+  .house-items select {
+    width: 50px;
+  }
+  .categories-row .categories {
+    width: 475px;
+    margin-right: 25px;
+  }
+  .categories-row select {
+    width: 50px;
+  }
+  .search-row input[type=search] {
+    width: 330px;
+  }
+  .search-row .btn-search {
+    width: 150px;
+  }
+}
+@media (min-width: 667px) {
+  .house-items .house-items-menu {
+    margin-right: 25px;
+    width: 475px;
+  }
+  .house-items select {
+    width: 50px;
+  }
+  .categories-row .categories {
+    width: 475px;
+    margin-right: 25px;
+  }
+  .categories-row select {
+    width: 50px;
+  }
+  .search-row input[type=search] {
+    width: 330px;
+  }
+  .search-row .btn-search {
+    width: 150px;
+  }
+  .properties {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .bg-box,
+  .border-box {
+    width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .house-items .house-items-menu {
+    width: 575px;
+  }
+  .categories-row .categories {
+    width: 575px;
+  }
+  .search-row input[type=search] {
+    width: 430px;
+  }
+  .search-row .btn-search {
+    width: 175px;
+  }
+  .bg-box,
+  .border-box {
+    width: 350px;
+  }
+}
+@media (min-width: 992px) {
+  .navigation .main-menu li a .icon {
+    min-height: 23px;
+    margin-bottom: 5px;
+  }
+  .navigation .main-menu li a svg {
+    height: 23px;
+    width: auto;
+  }
+  .house-items .house-items-menu {
+    width: 775px;
+  }
+  .house-items select {
+    width: 75px;
+  }
+  .categories-row .categories {
+    width: 775px;
+  }
+  .categories-row select {
+    width: 75px;
+  }
+  .search-row input[type=search] {
+    width: 630px;
+  }
+  .search-row .btn-search {
+    width: 200px;
+  }
+  .properties {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .bg-box,
+  .border-box {
+    width: 300px;
+  }
+}
+@media (min-width: 1200px) {
+  .house-items .house-items-menu {
+    width: 1000px;
+  }
+  .house-items select {
+    width: 75px;
+  }
+  .categories-row .categories {
+    width: 1000px;
+  }
+  .categories-row select {
+    width: 75px;
+  }
+  .search-row input[type=search] {
+    width: 365px;
+  }
+  .search-row .btn-search {
+    width: 260px;
+  }
+  .properties {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .bg-box,
+  .border-box {
+    width: 375px;
+  }
+}
 @media (min-width: 1580px) {
   .container {
     width: 1580px;
@@ -804,36 +971,5 @@ a:hover {
   }
   .main .container .sidebar {
     order: 2;
-  }
-  .properties {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .bg-box,
-  .border-box {
-    width: 374px;
-  }
-}
-/* Styles for mobile view */
-.select-mobile {
-  display: none;
-}
-
-/* Styles for desktop view */
-.select-desktop {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  /* Styles for mobile view */
-  .select-mobile {
-    display: block;
-  }
-}
-@media (min-width: 768px) {
-  /* Styles for desktop view */
-  .select-desktop {
-    display: block;
   }
 }/*# sourceMappingURL=styles.css.map */
