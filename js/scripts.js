@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 
 
-  
+
 /* Button Other Links */
 let btnOtherLinks = document.querySelector('.btn-other-links');
 const otherLinks = document.querySelector('.other-links');
@@ -84,3 +84,20 @@ btnOtherLinks.addEventListener('click', function() {
     otherLinks.classList.add('hidden');
   }
 });
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    const houseItemsDropdown = document.getElementById('house-items-dropdown');
+    const categoriesDropdown = document.getElementById('categories-dropdown');
+    const isMobileView = window.matchMedia('(max-width: 767px)').matches;
+  
+    if (isMobileView) {
+      // Set the selected option text to "All" for mobile view
+      houseItemsDropdown.selectedIndex = 0;
+      categoriesDropdown.selectedIndex = 0;
+    } else {
+      // Set the selected option text to "View All" for desktop view
+      houseItemsDropdown.selectedIndex = 1;
+      categoriesDropdown.selectedIndex = 1;
+    }
+  });
